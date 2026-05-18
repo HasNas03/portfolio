@@ -12,8 +12,9 @@
     "react-scroll": "^1.9.3",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://HasNas03.github.io/portfolio",
+  "homepage": "https://hasnas03.github.io/portfolio",
   "scripts": {
+    "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -40,6 +41,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.3.0"
   }
 }
