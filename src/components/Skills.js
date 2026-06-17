@@ -18,6 +18,8 @@ import dockerImage from '../assets/docker.png';
 import awsImage from '../assets/aws.png';
 import postmanImage from '../assets/postman.png';
 // import codeImage from '../assets/code.png';
+import codex from '../assets/codex.svg'
+import copilot from '../assets/copilot.jpg'
 
 function Skills() {
     const skillsData = [
@@ -31,7 +33,8 @@ function Skills() {
         { image: postmanImage, text: 'Postman', color: 'rgba(183, 12, 217, 0.4)' },
         { image: gitImage, text: 'Git', color: 'rgba(227, 117, 13, 0.4)'},
         { image: arcgisImage, text: 'ArcGIS Pro', color: 'rgba(23, 226, 115, 0.4)'},
-        // { image: jupyterImage, text: 'Jupyter Notebook'},
+        { image: codex, text: 'OpenAI Codex', color: 'rgba(150, 117, 215, 0.4)'},
+        { image: copilot, text: 'Github Copilot', color: 'rgba(117, 195, 215, 0.57)'}
         // { image: mongodbImage, text: 'MongoDB' },
         // { image: tableauImage, text: 'Tableau' },
         // { image: javascriptImage, text: 'JavaScript' },

@@ -8,7 +8,7 @@ function Home() {
       <h1 className="sectiontitle firsttitle">Hi, I'm Hasan Nasir ㋡</h1>
 <div className="intro-card">
         <img className="intro-image" src={me} alt="Hasan Nasir" />
-        <p className="intro-text">Hello there! I'm a 4th-year Computer Science, Geospatial Data Science, and Applied Statistics student at the University of Toronto. I enjoy building scalable modular applications, and love chatting about comic books, Formula 1, and the Cloud!</p>
+        <p className="intro-text">Hello there! I'm a recent University of Toronto graduate in Computer Science, Geospatial Data Science, and Applied Statistics. I enjoy building scalable modular applications, and love chatting about comic books, Formula 1, and the Cloud! Actively looking for postions : )</p>
       </div>      {/* Links */}
       <div className='icons'>
         <a 

@@ -169,18 +169,10 @@ section {
 .skill-images-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
-  gap: 20px;
+  gap: 32px 40px; /* row-gap column-gap: more vertical and horizontal spacing */
   max-width: 1200px; /* Control maximum width */
   margin: 0 auto; /* Center the grid */
   padding: 0 50px; /* Add some padding on sides */
-}
-/* Center the last 2 items */
-.skill-item:nth-last-child(2) {
-  grid-column: 2 / 3;
-}
-
-.skill-item:nth-last-child(1) {
-  grid-column: 3 / 4;
 }
 
 
@@ -188,7 +180,8 @@ section {
   border: 2px solid rgba(255, 255, 255, 0.699);
   background-color: var(--hover-color);
   border-radius: 12px;
-  padding: 20px;
+  overflow: hidden; /* clip children so image corners match the card */
+  padding: 28px; /* increase inner padding for airier cards */
   font-size: large;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -196,7 +189,7 @@ section {
   align-items: center;
   gap: 12px;
   text-align: center;
-  margin: 20px; /* Add margin for spacing between items */}
+  margin: 0; /* use grid gap instead of individual margins */}
 
 .skill-item:hover {
     transform: translateY(-10px);
@@ -208,7 +201,12 @@ section {
 .skill-image {
   width: 140px;
   height: auto;
-  margin-bottom: 10px; /* Adjust margin for spacing between image and text */}
+  margin-bottom: 10px; /* Adjust margin for spacing between image and text */
+  border-radius: 30px; /* round the image corners */
+  object-fit: cover; /* keep image aspect while filling the box */
+  display: block;
+  backface-visibility: hidden;
+}
 .skill-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;}
