@@ -207,7 +207,15 @@ section {
   line-height: 0.95;
   font-weight: 200;
   letter-spacing: 0;
-  color: var(--text);
+  background: linear-gradient(
+    160deg,
+    #f0ecec 0%, #b9c8d6 20%, #9cb7d9 38%,
+    #e1dcdc 50%, #a9c3e3 65%, #becbd7 80%, #eeeaea 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(120, 180, 255, 0.4));
   animation: fadeIn 0.8s ease-in-out forwards;
 }
 
@@ -349,10 +357,10 @@ section {
     rgba(255, 255, 255, 0.08);
   box-shadow: 0 14px 34px rgba(47, 123, 255, 0.28);
   transition:
-    width 2s ease-in-out,
-    border-radius 2s ease-in-out,
-    box-shadow 2s ease-in-out,
-    filter 2s ease-in-out;
+    width .3s ease-in-out,
+    border-radius .3s ease-in-out,
+    box-shadow .3s ease-in-out,
+    filter .3s ease-in-out;
   will-change: width;
 }
 
@@ -432,46 +440,16 @@ section {
   margin: 0 auto;
 }
 
-/* Vertical timeline line. It sits behind the numbered markers. */
-.experience-timeline::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  bottom: 18px;
-  left: 24px;
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #0077ff, rgb(255, 0, 119), #00ff99);}
 
 /* One timeline row. The first column is the marker; second is the glass card. */
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 50px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: -20px;
   align-items: stretch;
 }
 
-/* Numbered marker. The accent color comes from each experience object. */
-.timeline-marker {
-  position: relative;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.38), transparent 30%),
-    linear-gradient(135deg, color-mix(in srgb, var(--timeline-accent), white 8%));
-  box-shadow: 0 16px 42px color-mix(in srgb, var(--timeline-accent), transparent);
-}
-.timeline-marker span {
-  color: #04101f;
-  font-size: 0.88rem;
-  font-weight: 900;
-}
 
 /* Timeline glass card. This replaces the old solid yellow/blue cards. */
 .timeline-card {
@@ -620,7 +598,7 @@ section {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(167, 210, 255, 0.18);
+  border: 3px solid rgba(167, 210, 255, 0);
   border-radius: var(--radius);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
@@ -628,11 +606,14 @@ section {
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.32);
   text-align: left;
   backdrop-filter: blur(16px);
-  transition:
-    transform var(--motion),
-    box-shadow var(--motion),
-    border-color var(--motion),
-    filter var(--motion);
+  transition: 0.3s ease-in-out;
+}
+
+/* Project card hover lift. Transition lives on .projectItem for smooth out. */
+.projectItem:hover {
+  border: 3px solid;
+  border-color: rgba(220, 220, 220, 0.742);;
+  transform: scale(1.05);
 }
 
 /* Animated bottom glint on project cards. */
@@ -640,17 +621,17 @@ section {
   content: "";
   position: absolute;
   inset: auto 18px 18px 18px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--pink) 20%,
+    var(--cyan) 50%,
+    var(--green) 80%,
+    transparent
+  );
   opacity: 0;
   transition: opacity var(--motion);
-}
-
-/* Project card hover lift. Transition lives on .projectItem for smooth out. */
-.projectItem:hover {
-  border-color: rgba(69, 200, 255, 0.38);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.46);
-  filter: saturate(112%);
 }
 
 .projectItem:hover::after {
@@ -781,7 +762,12 @@ section {
     inset 0 0 22px color-mix(in srgb, var(--hover-color) 14%, transparent);
   text-align: center;
   backdrop-filter: blur(16px);
-  transition: border-color var(--motion), box-shadow var(--motion), filter var(--motion);
+  transition: 0.4s ease-in-out;
+  }
+
+.skill-item:hover {
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  transform: scale(1.2);
 }
 
 /* Skill logo image inside each bubble. */

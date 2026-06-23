@@ -43,7 +43,6 @@ function Experience() {
             style={{ '--timeline-accent': experience.accent }}
           >
             <div className='timeline-marker' aria-hidden='true'>
-              <span>{index + 1}</span>
             </div>
 
             <div className='timeline-card'>

@@ -21,26 +21,28 @@ function Projects() {
           {/* comic catalog*/}
           <a href='https://github.com/HasNas03/comic-catalog-service' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Comic Catalog ↗" paragraph="Java | Spring Boot | Postman" 
-          image={comicImage} bgColor="rgba(152, 5, 5, 0.4)"/>
+          image={comicImage} 
+          bgColor="rgba(240, 32, 32, 0.58)"
+          />
           </a>
           {/* rekognition*/}
           <a href='https://github.com/HasNas03/rekognition_app' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
-          <Card name="Face Rekognizer ↗" paragraph="AWS Rekognition, S3, Lambda, DynamoDB" 
-          image={suiteImage} bgColor="rgba(98, 16, 142, 0.4)"/>
+          <Card name="Face Rekognizer ↗" paragraph="AWS Rekognition | Lambda | DynamoDB" 
+          image={suiteImage} bgColor="rgba(118, 20, 171, 0.44)"/>
           </a>
           {/* treemap*/}
           <Card name="FilePath Treemap Visualizer" paragraph="Python | pygame" 
-          image={treemap} bgColor="rgba(125, 16, 96, 0.4)"/>
+          image={treemap} bgColor="rgba(213, 29, 191, 0.47)"/>
           {/* boggle pro*/}
           <Card name="Boggle Pro" paragraph="Java | JavaFX" 
-          image={boggle} bgColor="rgba(119, 49, 14, 0.4)"/>
+          image={boggle} bgColor="rgba(215, 66, 21, 0.72)"/>
           {/* tetris*/}
           <Card name="Tetris" paragraph="Java | JavaFX" 
-          image={tetris2} bgColor="rgba(16, 153, 141, 0.4)"/>
+          image={tetris2} bgColor="rgba(18, 221, 76, 0.46)"/>
           {/* site suitability*/}
           <a href='https://github.com/HasNas03/Jupyter-notebooks/blob/main/Site%20Suitability%20Analysis%20Report%20-%20Personal.pdf' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Site Suitability Analysis ↗" paragraph="postgreSQL | QGIS | PostGIS" 
-          image={site} bgColor="rgba(142, 41, 16, 0.4)"/>
+          image={site} bgColor="rgba(102, 34, 17, 0.4)"/>
           </a>
           {/* to do*/}
           {/* <a href='https://github.com/HasNas03/to-do-list' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
