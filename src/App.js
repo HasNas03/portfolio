@@ -10,7 +10,10 @@ import Projects from './components/Projects';
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ '--background-image': `url(${process.env.PUBLIC_URL}/background.jpg)` }}
+    >
       <Navbar />
       <Home />
       <Experience />
@@ -21,5 +24,4 @@ function App() {
 }
 
 export default App;
-
 

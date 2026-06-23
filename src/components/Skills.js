@@ -23,18 +23,18 @@ import copilot from '../assets/copilot.jpg'
 
 function Skills() {
     const skillsData = [
-        { image: pythonImage, text: 'Python', color: 'rgba(35, 185, 190, 0.4)' },     
-        { image: javaImage, text: 'Java', color: 'rgba(208, 115, 28, 0.4)' },
-        { image: springbootImage, text: 'Spring Boot', color: 'rgba(65, 226, 20, 0.4)' },
-        { image: postgresqlImage, text: 'PostgreSQL', color: 'rgba(19, 125, 206, 0.4)'},
-        { image: awsImage, text: 'AWS', color: 'rgba(16, 169, 229, 0.4)'},
-        { image: terraformImage, text: 'Terraform', color: 'rgba(90, 15, 228, 0.4)'},
-        { image: dockerImage, text: 'Docker', color: 'rgba(108, 108, 108, 0.4)'},
-        { image: postmanImage, text: 'Postman', color: 'rgba(183, 12, 217, 0.4)' },
-        { image: gitImage, text: 'Git', color: 'rgba(227, 117, 13, 0.4)'},
-        { image: arcgisImage, text: 'ArcGIS Pro', color: 'rgba(23, 226, 115, 0.4)'},
-        { image: codex, text: 'OpenAI Codex', color: 'rgba(150, 117, 215, 0.4)'},
-        { image: copilot, text: 'Github Copilot', color: 'rgba(117, 195, 215, 0.57)'}
+        { image: pythonImage, text: 'Python', color: '#2bc8ff' },     
+        { image: javaImage, text: 'Java', color: '#ff9d2e' },
+        { image: springbootImage, text: 'Spring Boot', color: '#78e64e' },
+        { image: postgresqlImage, text: 'PostgreSQL', color: '#3ca7ff'},
+        { image: awsImage, text: 'AWS', color: '#16c7ff'},
+        { image: terraformImage, text: 'Terraform', color: '#8a5cff'},
+        { image: dockerImage, text: 'Docker', color: '#20b7ff'},
+        { image: postmanImage, text: 'Postman', color: '#ff65c8' },
+        { image: gitImage, text: 'Git', color: '#ff7a2f'},
+        { image: arcgisImage, text: 'ArcGIS Pro', color: '#2deda1'},
+        { image: codex, text: 'OpenAI Codex', color: '#a47cff'},
+        { image: copilot, text: 'Github Copilot', color: '#72e4ff'}
         // { image: mongodbImage, text: 'MongoDB' },
         // { image: tableauImage, text: 'Tableau' },
         // { image: javascriptImage, text: 'JavaScript' },

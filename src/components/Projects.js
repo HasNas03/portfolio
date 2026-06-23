@@ -25,7 +25,7 @@ function Projects() {
           </a>
           {/* rekognition*/}
           <a href='https://github.com/HasNas03/rekognition_app' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
-          <Card name="Face Rekognizer ↗" paragraph="React.js | AWS Rekognition, S3, Lambda, DynamoDB" 
+          <Card name="Face Rekognizer ↗" paragraph="AWS Rekognition, S3, Lambda, DynamoDB" 
           image={suiteImage} bgColor="rgba(98, 16, 142, 0.4)"/>
           </a>
           {/* treemap*/}
