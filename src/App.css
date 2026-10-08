@@ -15,9 +15,9 @@
   --panel-border: #d7c3ae;
 
   /* Main text and supporting text colors. */
-  --text: #3d302a;
-  --display-text: #514038;
-  --muted: #715e54;
+  --text: #7c6257;
+  --display-text: #6e5b52;
+  --muted: #7c6356;
 
   /* Accent palette used in headings, buttons, timeline dots, and skill bubbles. */
   --red: #e78f8f;
@@ -207,11 +207,15 @@ body.portfolio-is-loading {
 
 /* Individual nav pill text. Change font-size or padding to resize the nav. */
 .navbar li {
-  cursor: pointer;
   user-select: none;
+}
+
+.navbar li > a {
+  display: block;
   border: 1px solid transparent;
   border-radius: 12px;
   padding: 8px 12px;
+  cursor: pointer;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 700;
@@ -223,7 +227,7 @@ body.portfolio-is-loading {
 }
 
 /* Nav hover state. This animates both in and out because transition is above. */
-.navbar li:hover {
+.navbar li > a:hover {
   color: var(--text);
   border-color: #cdb8a3;
   background-color: #dcebed;
@@ -713,10 +717,9 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
 /* Flexible bubble field. Change max-width/gap to spread or tighten the marbles. */
 .skill-images-container {
   width: min(1040px, 100%);
-  display: grid;
-  grid-template-columns: repeat(6, 148px);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
   gap: 24px;
   margin: 0 auto;
   padding: 10px 0;
@@ -847,7 +850,6 @@ html:not(.wheel-motion-active) .skill-item:hover {
   /* Skills go from 4 columns to 3 columns on tablets. */
   .skill-images-container {
     width: min(502px, 100%);
-    grid-template-columns: repeat(3, 146px);
   }
 
   .skill-item {
@@ -888,8 +890,11 @@ html:not(.wheel-motion-active) .skill-item:hover {
   }
 
   .navbar li {
-    padding: 8px 10px;
     font-size: 0.82rem;
+  }
+
+  .navbar li > a {
+    padding: 8px 10px;
   }
 
   .logo {
@@ -964,7 +969,6 @@ html:not(.wheel-motion-active) .skill-item:hover {
   /* Skills become a compact 2-column circular icon grid on mobile. */
   .skill-images-container {
     width: min(292px, 100%);
-    grid-template-columns: repeat(2, 138px);
     gap: 16px;
   }
 

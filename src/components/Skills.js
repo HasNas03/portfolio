@@ -13,6 +13,7 @@ import javaImage from '../assets/java.png';
 // import pandasImage from '../assets/pandas.png';
 // import jupyterImage from '../assets/jupyter.png';
 import springbootImage from '../assets/springboot.png';
+import fastapiImage from '../assets/fastapi.png';
 import terraformImage from '../assets/terraform.png';
 import dockerImage from '../assets/docker.png';
 import awsImage from '../assets/aws.png';
@@ -23,8 +24,9 @@ import copilot from '../assets/copilot.jpg'
 
 function Skills() {
     const skillsData = [
-        { image: pythonImage, text: 'Python', color: '#83bdc3' },
+        { image: pythonImage, text: 'Python', color: '#66b9c2' },
         { image: javaImage, text: 'Java', color: '#eead78' },
+        { image: fastapiImage, text: 'FastAPI', color: '#6cd7dc' },
         { image: springbootImage, text: 'Spring Boot', color: '#99bd8d' },
         { image: postgresqlImage, text: 'PostgreSQL', color: '#8ea9d5'},
         { image: awsImage, text: 'AWS', color: '#e7ca72'},
