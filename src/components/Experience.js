@@ -1,7 +1,9 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import interac from '../assets/interac.webp';
 import rbc from '../assets/rbc.png';
 
 function Experience() {
+  const shouldReduceMotion = useReducedMotion();
   const experiences = [
     {
       role: 'DevSecOps & Cloud Co-op',
@@ -33,14 +35,28 @@ function Experience() {
   ];
 
   return (
-    <section className='experience'>
+    <section className='experience' id='experience'>
       <h1 className="sectiontitle othertitle">Experience</h1>
       <div className='experience-timeline'>
         {experiences.map((experience, index) => (
-          <article
+          <motion.article
             className='timeline-item'
             key={experience.role}
-            style={{ '--timeline-accent': experience.accent }}
+            initial={shouldReduceMotion
+              ? { opacity: 0 }
+              : { opacity: 0, scale: 0.84, y: 22, rotate: index % 2 === 0 ? 2.5 : -2.5 }}
+            whileInView={shouldReduceMotion
+              ? { opacity: 1 }
+              : { opacity: 1, scale: 1, y: 0, rotate: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              type: 'spring',
+              stiffness: 170,
+              damping: 20,
+              mass: 0.8,
+              delay: index * 0.04,
+            }}
+            style={{ '--timeline-accent': experience.accent, transformOrigin: 'center bottom' }}
           >
             <div className='timeline-marker' aria-hidden='true'>
             </div>
@@ -70,7 +86,7 @@ function Experience() {
                 </ul>
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>

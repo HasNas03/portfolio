@@ -1,5 +1,6 @@
 // Skills.js
 import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 
 // import reactImage from '../assets/react.png';
 import pythonImage from '../assets/python.png'; // Import the images for each skill
@@ -23,6 +24,7 @@ import codex from '../assets/codex.svg'
 import copilot from '../assets/copilot.jpg'
 
 function Skills() {
+    const shouldReduceMotion = useReducedMotion();
     const skillsData = [
         { image: pythonImage, text: 'Python', color: '#66b9c2' },
         { image: javaImage, text: 'Java', color: '#eead78' },
@@ -37,29 +39,41 @@ function Skills() {
         { image: arcgisImage, text: 'ArcGIS Pro', color: '#99bd8d'},
         { image: codex, text: 'OpenAI Codex', color: '#b39bcf'},
         { image: copilot, text: 'Github Copilot', color: '#8ea9d5'}
-        // { image: mongodbImage, text: 'MongoDB' },
-        // { image: tableauImage, text: 'Tableau' },
-        // { image: javascriptImage, text: 'JavaScript' },
-        // { image: reactImage, text: 'React' },
-        // { image: pandasImage, text: 'pandas' },
-        
     ];
 
-    
     return (
-    <section className='skills'>
+    <section className='skills' id='skills'>
         <h1 className="sectiontitle othertitle">Skills</h1>
         {/* <p className='desc desc2'>Here are some of my technical skills</p> */}
         <div className="skill-images-container">
             {skillsData.map((skill, index) => (
-                <div 
-                    key={index} 
-                    className="skill-item"
-                    style={{ '--hover-color': skill.color }}
+                <motion.div
+                    key={index}
+                    className="skill-reveal"
+                    initial={shouldReduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, scale: 0.82, y: 18, rotate: index % 2 === 0 ? -5 : 5 }}
+                    whileInView={shouldReduceMotion
+                        ? { opacity: 1 }
+                        : { opacity: 1, scale: 1, y: 0, rotate: 0 }}
+                    whileHover={shouldReduceMotion
+                        ? undefined
+                        : { scale: 1.035, rotate: index % 2 === 0 ? 1 : -1 }}
+                    viewport={{ once: false, amount: 0.22 }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 170,
+                        damping: 20,
+                        mass: 0.8,
+                        delay: (index % 6) * 0.025,
+                    }}
+                    style={{ transformOrigin: 'center bottom' }}
                 >
-                    <img src={skill.image} alt={skill.text} className="skill-image" />
-                    <p className="skill-text">{skill.text}</p>
-                </div>
+                    <div className="skill-item" style={{ '--hover-color': skill.color }}>
+                        <img src={skill.image} alt={skill.text} className="skill-image" />
+                        <p className="skill-text">{skill.text}</p>
+                    </div>
+                </motion.div>
             ))}
         </div>
     </section>

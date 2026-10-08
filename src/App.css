@@ -76,7 +76,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 /* Warm overlay on top of the background photo for readability. */
@@ -177,6 +177,11 @@ body.portfolio-is-loading {
    Fixed glass navbar. Change top/width/padding here if you want it tighter,
    wider, or closer to the browser edge.
    ========================================================================== */
+.App {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .navbar {
   position: fixed;
   top: 16px;
@@ -205,7 +210,6 @@ body.portfolio-is-loading {
   padding: 0;
 }
 
-/* Individual nav pill text. Change font-size or padding to resize the nav. */
 .navbar li {
   user-select: none;
 }
@@ -217,6 +221,7 @@ body.portfolio-is-loading {
   padding: 8px 12px;
   cursor: pointer;
   color: var(--muted);
+  text-decoration: none;
   font-size: 0.88rem;
   font-weight: 700;
   transition:
@@ -226,7 +231,6 @@ body.portfolio-is-loading {
     transform var(--motion);
 }
 
-/* Nav hover state. This animates both in and out because transition is above. */
 .navbar li > a:hover {
   color: var(--text);
   border-color: #cdb8a3;
@@ -258,23 +262,6 @@ section {
   padding: 120px clamp(18px, 4.5vw, 64px) 82px;
 }
 
-/* Each visible block occupies one position on the page's virtual wheel. */
-html.wheel-motion-active .wheel-scroll-item {
-  opacity: var(--wheel-opacity, 1);
-  transform:
-    perspective(700px)
-    translateY(calc(var(--wheel-shift, 0px) + var(--hover-lift, 0px)))
-    rotateX(var(--wheel-tilt, 0deg))
-    scale(var(--wheel-scale, 1));
-  transform-origin: center center;
-  backface-visibility: hidden;
-}
-
-/* Only nearby wheel items reserve a compositor layer. */
-html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
-  will-change: transform, opacity;
-}
-
 /* Main section title. Change font-size clamp to resize all section headings. */
 .sectiontitle {
   margin: 0 0 34px;
@@ -297,7 +284,7 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   width: min(940px, 100%);
   max-width: none;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 /* Non-hero section titles. Kept as a class for easy future tweaks. */
@@ -311,13 +298,19 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
    Hero layout, portrait card, intro copy, and social buttons.
    ========================================================================== */
 .home {
-  min-height: 100vh;
+  min-height: 90vh;
   align-items: center;
-  justify-content: center;
-  padding-top: 118px;
+  justify-content: flex-start;
+  padding-top: 136px;
   padding-left: clamp(18px, 4.5vw, 64px);
   padding-right: clamp(18px, 4.5vw, 64px);
-  padding-bottom: 64px;
+  padding-bottom: 46px;
+}
+
+.home > .sectiontitle,
+.home > .intro-card,
+.home > .icons {
+  transform: translateY(76px);
 }
 
 /* Glass card containing the portrait and intro paragraph. */
@@ -381,6 +374,15 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   justify-content: flex-start;
 }
 
+.home-link-reveal {
+  flex: 0 0 var(--home-button-size);
+  transition: flex-basis var(--motion);
+}
+
+.home-link-reveal:hover {
+  flex-basis: 220px;
+}
+
 /* Circular-ish icon buttons. Change width/height for bigger or smaller icons. */
 .btn {
   position: relative;
@@ -407,16 +409,16 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
 }
 
 /* Individual home icon button gradients: resume, LinkedIn, GitHub, email. */
-.icons .btn:nth-child(1) {
+.icons .home-link-reveal:nth-child(1) .btn {
   background: var(--red);
 }
-.icons .btn:nth-child(2) {
+.icons .home-link-reveal:nth-child(2) .btn {
   background: var(--yellow);
 }
-.icons .btn:nth-child(3) {
+.icons .home-link-reveal:nth-child(3) .btn {
   background: var(--purple);
 }
-.icons .btn:nth-child(4) {
+.icons .home-link-reveal:nth-child(4) .btn {
   background: var(--cyan);
 }
 
@@ -464,6 +466,7 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
    ========================================================================== */
 .experience {
   position: relative;
+  padding-top: 160px;
 }
 
 /* Whole timeline container. Change max width if you want a wider timeline. */
@@ -611,6 +614,12 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   min-width: 0;
 }
 
+.project-reveal {
+  width: 100%;
+  height: 100%;
+  min-height: 322px;
+}
+
 /* Reusable project card. The Card component may pass a bgColor; glass layers keep it modern. */
 .projectItem {
   position: relative;
@@ -633,6 +642,7 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
 }
 
 .projectItem:hover {
+  transform: translateY(-5px);
   border-color: color-mix(in srgb, var(--project-accent) 70%, #8b7465);
   box-shadow: 0 24px 48px rgba(86, 67, 52, 0.16);
 }
@@ -725,6 +735,11 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   padding: 10px 0;
 }
 
+.skill-reveal {
+  width: 148px;
+  height: 138px;
+}
+
 /* Circular skill bubble. Change --bubble-size to resize every skill bubble. */
 .skill-item {
   --bubble-size: 148px;
@@ -747,8 +762,14 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   transition: transform var(--motion), box-shadow var(--motion), background-color var(--motion);
 }
 
+.skill-reveal .skill-item {
+  width: 100%;
+  height: 100%;
+}
+
 .skill-item:hover {
   --hover-lift: -5px;
+  transform: translateY(-5px);
   background: color-mix(in srgb, var(--hover-color) 56%, #fffaf3);
   box-shadow: 0 18px 32px rgba(86, 67, 52, 0.14);
 }
@@ -819,20 +840,60 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
     transition-duration: 0.01ms !important;
   }
 
-  html:not(.wheel-motion-active) .wheel-scroll-item {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
   .loading-square {
     opacity: 1;
     transform: none;
   }
 }
 
-html:not(.wheel-motion-active) .projectItem:hover,
-html:not(.wheel-motion-active) .skill-item:hover {
+.projectItem:hover,
+.skill-item:hover {
   transform: translateY(-5px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.has-playful-cursor,
+  html.has-playful-cursor body,
+  html.has-playful-cursor body * {
+    cursor: none !important;
+  }
+
+  html.has-playful-cursor input,
+  html.has-playful-cursor textarea,
+  html.has-playful-cursor select,
+  html.has-playful-cursor [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+.playful-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 18px;
+  height: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-100px, -100px, 0);
+  will-change: transform, opacity;
+  transition: opacity 100ms ease;
+}
+
+.playful-cursor--visible {
+  opacity: 1;
+}
+
+.playful-cursor--editing {
+  opacity: 0;
+}
+
+.playful-cursor img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
 }
 
 /* ==========================================================================
@@ -857,12 +918,17 @@ html:not(.wheel-motion-active) .skill-item:hover {
     height: 136px;
   }
 
+  .skill-reveal {
+    width: 146px;
+    height: 136px;
+  }
+
   .firsttitle {
     text-align: center;
   }
 
   .icons {
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
   }
 }
@@ -874,34 +940,6 @@ html:not(.wheel-motion-active) .skill-item:hover {
   }
 
   /* Compact mobile navbar. */
-  .navbar {
-    top: 10px;
-    width: calc(100% - 20px);
-    min-height: auto;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .navbar ul {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: end;
-    gap: 4px 6px;
-  }
-
-  .navbar li {
-    font-size: 0.82rem;
-  }
-
-  .navbar li > a {
-    padding: 8px 10px;
-  }
-
-  .logo {
-    width: 36px;
-    height: 36px;
-  }
-
   /* General mobile section spacing. */
   section {
     padding: 122px 16px 70px;
@@ -910,7 +948,7 @@ html:not(.wheel-motion-active) .skill-item:hover {
 
   .home {
     min-height: auto;
-    padding-top: 146px;
+    padding-top: 164px;
   }
 
   /* Stack portrait above intro text on mobile. */
@@ -966,6 +1004,10 @@ html:not(.wheel-motion-active) .skill-item:hover {
     min-height: 304px;
   }
 
+  .project-reveal {
+    min-height: 304px;
+  }
+
   /* Skills become a compact 2-column circular icon grid on mobile. */
   .skill-images-container {
     width: min(292px, 100%);
@@ -974,6 +1016,11 @@ html:not(.wheel-motion-active) .skill-item:hover {
 
   .skill-item {
     --bubble-size: 138px;
+    height: 128px;
+  }
+
+  .skill-reveal {
+    width: 138px;
     height: 128px;
   }
 
