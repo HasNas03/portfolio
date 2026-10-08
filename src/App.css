@@ -16,6 +16,7 @@
 
   /* Main text and supporting text colors. */
   --text: #3d302a;
+  --display-text: #514038;
   --muted: #715e54;
 
   /* Accent palette used in headings, buttons, timeline dots, and skill bubbles. */
@@ -91,6 +92,83 @@ body::after {
 /* Keep links inheriting card/button colors instead of browser blue. */
 a {
   color: inherit;
+}
+
+/* ==========================================================================
+   First-Visit Loading Screen
+   --------------------------------------------------------------------------
+   A segmented pastel progress bar appears on every page load.
+   ========================================================================== */
+body.portfolio-is-loading {
+  overflow: hidden;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg-soft);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 500ms step-end;
+}
+
+.loading-screen--revealing {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-screen__content {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.loading-screen__label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.loading-squares {
+  display: grid;
+  grid-template-columns: repeat(5, clamp(26px, 5vw, 44px));
+  gap: clamp(7px, 1.2vw, 11px);
+}
+
+.loading-square {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(61, 48, 42, 0.12);
+  border-radius: 8px;
+  background: var(--loader-color);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--loader-color) 32%, transparent);
+  opacity: 0;
+  transform: translateY(8px) scale(0.72);
+  animation: loaderSquareFill 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--loader-delay);
+}
+
+.loading-square:nth-child(1) { --loader-color: #ff7f91; }
+.loading-square:nth-child(2) { --loader-color: #ffc857; }
+.loading-square:nth-child(3) { --loader-color: #72d6a0; }
+.loading-square:nth-child(4) { --loader-color: #65cbe3; }
+.loading-square:nth-child(5) { --loader-color: #b28ae8; }
+
+@keyframes loaderSquareFill {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ==========================================================================
@@ -201,7 +279,7 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   line-height: 0.95;
   font-weight: 300;
   letter-spacing: -0.035em;
-  color: var(--text);
+  color: var(--display-text);
   animation: fadeIn 0.8s ease-in-out forwards;
 }
 
@@ -546,9 +624,12 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
 }
 
 /* Project card hover lift. Transition lives on .projectItem for smooth out. */
+.projectList > *:hover {
+  --hover-lift: -5px;
+}
+
 .projectItem:hover {
   border-color: color-mix(in srgb, var(--project-accent) 70%, #8b7465);
-  --hover-lift: -5px;
   box-shadow: 0 24px 48px rgba(86, 67, 52, 0.16);
 }
 
@@ -738,6 +819,11 @@ html.wheel-motion-active .wheel-scroll-item.wheel-scroll-nearby {
   html:not(.wheel-motion-active) .wheel-scroll-item {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .loading-square {
+    opacity: 1;
+    transform: none;
   }
 }
 
