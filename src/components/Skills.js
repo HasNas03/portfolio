@@ -23,18 +23,18 @@ import copilot from '../assets/copilot.jpg'
 
 function Skills() {
     const skillsData = [
-        { image: pythonImage, text: 'Python', color: '#2bc8ff' },     
-        { image: javaImage, text: 'Java', color: '#ff9d2e' },
-        { image: springbootImage, text: 'Spring Boot', color: '#78e64e' },
-        { image: postgresqlImage, text: 'PostgreSQL', color: '#3ca7ff'},
-        { image: awsImage, text: 'AWS', color: '#16c7ff'},
-        { image: terraformImage, text: 'Terraform', color: '#8a5cff'},
-        { image: dockerImage, text: 'Docker', color: '#20b7ff'},
-        { image: postmanImage, text: 'Postman', color: '#ff65c8' },
-        { image: gitImage, text: 'Git', color: '#ff7a2f'},
-        { image: arcgisImage, text: 'ArcGIS Pro', color: '#2deda1'},
-        { image: codex, text: 'OpenAI Codex', color: '#a47cff'},
-        { image: copilot, text: 'Github Copilot', color: '#72e4ff'}
+        { image: pythonImage, text: 'Python', color: '#83bdc3' },
+        { image: javaImage, text: 'Java', color: '#eead78' },
+        { image: springbootImage, text: 'Spring Boot', color: '#99bd8d' },
+        { image: postgresqlImage, text: 'PostgreSQL', color: '#8ea9d5'},
+        { image: awsImage, text: 'AWS', color: '#e7ca72'},
+        { image: terraformImage, text: 'Terraform', color: '#b39bcf'},
+        { image: dockerImage, text: 'Docker', color: '#83bdc3'},
+        { image: postmanImage, text: 'Postman', color: '#dc96aa' },
+        { image: gitImage, text: 'Git', color: '#e78f8f'},
+        { image: arcgisImage, text: 'ArcGIS Pro', color: '#99bd8d'},
+        { image: codex, text: 'OpenAI Codex', color: '#b39bcf'},
+        { image: copilot, text: 'Github Copilot', color: '#8ea9d5'}
         // { image: mongodbImage, text: 'MongoDB' },
         // { image: tableauImage, text: 'Tableau' },
         // { image: javascriptImage, text: 'JavaScript' },
