@@ -12,8 +12,7 @@ export default function Card({image, name, paragraph, bgColor}) {
     <div
       className='projectItem'
       style={{
-        '--project-accent': bgColor || 'rgba(69, 200, 255, 0.4)',
-        backgroundColor: bgColor || 'rgba(0, 0, 0, 0.4)',
+        '--project-accent': bgColor || '#83bdc3',
       }}
     >
       <div style={{ backgroundImage: `url(${image})` }} className='bgImage' />

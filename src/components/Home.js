@@ -4,7 +4,7 @@ import me from '../assets/me.jpeg';
 function Home() {
   return (
     <section className="home">
-      <h1 className="sectiontitle firsttitle">Hi, I'm Hasan Nasir</h1>
+      <h1 className="sectiontitle firsttitle">Hi, I'm Hasan Nasir : )</h1>
       <div className="intro-card">
         <img className="intro-image" src={me} alt="Hasan Nasir" />
         <p className="intro-text">Hello there! I'm a recent University of Toronto graduate in Computer Science, Geospatial Data Science, and Applied Statistics. I enjoy building scalable modular applications, and love chatting about comic books, Formula 1, and the Cloud! Actively seeing new-grad positions : )</p>
