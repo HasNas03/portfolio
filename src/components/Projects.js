@@ -10,7 +10,7 @@ import covidImage from '../assets/covid.jpg'
 import carImage from '../assets/car.jpg'
 import suiteImage from '../assets/suite.jpg'
 import comicImage from '../assets/comics.webp'
-
+import noteImage from '../assets/note.jpeg'
 
 function Projects() {
   return (
@@ -21,24 +21,29 @@ function Projects() {
           <a href='https://github.com/HasNas03/comic-catalog-service' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Comic Catalog ↗" paragraph="Java | Spring Boot | Postman" 
           image={comicImage} 
-          bgColor="#cd6927"
+          bgColor="#f62206"
           revealDelay={0}
           />
           </a>
-          {/* rekognition*/}
-          <a href='https://github.com/HasNas03/rekognition_app' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
+          {/* Brother Eye*/}
+          <a href='https://github.com/HasNas03/BrotherEye' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Brother Eye ↗" paragraph="AWS Rekognition | Lambda | DynamoDB" 
-          image={suiteImage} bgColor="#2a9dc7" revealDelay={0.04}/>
+          image={suiteImage} bgColor="#1da2d2" revealDelay={0.04}/>
+          </a>
+          {/*Fetchdex*/}
+          <a href='https://github.com/HasNas03/Fetchdex' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
+          <Card name="Fetchdex ↗" paragraph="Python | FastAPI | Ollama" 
+          image={noteImage} bgColor="#34e610" revealDelay={0.04}/>
           </a>
           {/* treemap*/}
           <Card name="FilePath Treemap Visualizer" paragraph="Python | pygame" 
-          image={treemap} bgColor="#19b63b" revealDelay={0.08}/>
+          image={treemap} bgColor="#10d681" revealDelay={0.08}/>
           {/* boggle pro*/}
           <Card name="Boggle Pro" paragraph="Java | JavaFX" 
-          image={boggle} bgColor="#c46b22" revealDelay={0}/>
+          image={boggle} bgColor="#ea710e" revealDelay={0}/>
           {/* tetris*/}
           <Card name="Tetris" paragraph="Java | JavaFX" 
-          image={tetris2} bgColor="#bc2bbe" revealDelay={0.04}/>
+          image={tetris2} bgColor="#d21bd5" revealDelay={0.04}/>
           {/* site suitability*/}
           <a href='https://github.com/HasNas03/Jupyter-notebooks/blob/main/Site%20Suitability%20Analysis%20Report%20-%20Personal.pdf' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Site Suitability Analysis ↗" paragraph="postgreSQL | QGIS | PostGIS" 
@@ -51,7 +56,7 @@ function Projects() {
           {/* emissions*/}
           <a href='https://github.com/HasNas03/Jupyter-notebooks/blob/main/emissions/Carbon%20Emissions.ipynb' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="CO2 Emissions Statistical Analysis ↗" paragraph="Python | pandas | Jupyter Notebook" 
-          image={carImage} bgColor="#433eaf" revealDelay={0}/>
+          image={carImage} bgColor="#8a3bc3" revealDelay={0}/>
           </a>
           {/* covid tableau*/}
           <a href='https://public.tableau.com/views/COVIDDashboard_17050443722110/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
