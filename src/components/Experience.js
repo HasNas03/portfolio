@@ -10,8 +10,9 @@ function Experience() {
       company: 'Interac Corporation',
       dates: 'Jan. 2025 - Aug. 2025',
       image: interac,
-      accent: '#e7ca72',
-      skills: ['AWS', 'Terraform', 'Kubernetes', 'Docker', 'GitHub Copilot', 'Agile/Scrum', 'GitHub Actions'],
+      cardBackground: '#fff4cc',
+      accent: '#dfd168',
+      skills: ['AWS', 'Terraform', 'Kubernetes', 'Docker', 'Agile/Scrum','GitHub Copilot', 'GitHub Actions'],
       bullets: [],
     },
     {
@@ -19,7 +20,8 @@ function Experience() {
       company: 'Royal Bank of Canada',
       dates: 'Sep. 2024 - Dec. 2024',
       image: rbc,
-      accent: '#83bdc3',
+      cardBackground: '#dceeff',
+      accent: '#688ddf',
       skills: ['Python', 'RESTful APIs', 'CI/CD', 'Site Reliability Engineering'],
       bullets: [],
     },
@@ -28,7 +30,8 @@ function Experience() {
       company: 'Interac Corporation',
       dates: 'May 2024 - Aug. 2024',
       image: interac,
-      accent: '#eead78',
+      cardBackground: '#fff4cc',
+      accent: '#dfd168',
       skills: ['AWS', 'Kubernetes','Agile/Scrum'],
       bullets: [],
     },
@@ -61,7 +64,7 @@ function Experience() {
             <div className='timeline-marker' aria-hidden='true'>
             </div>
 
-            <div className='timeline-card'>
+            <div className='timeline-card' style={{ backgroundColor: experience.cardBackground }}>
               <div className='timeline-logo-wrap'>
                 <img className='timeline-logo' src={experience.image} alt={`${experience.company} logo`} />
               </div>

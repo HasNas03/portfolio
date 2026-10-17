@@ -8,7 +8,6 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import LoadingScreen from './components/LoadingScreen';
-import PlayfulCursor from './components/PlayfulCursor';
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -52,7 +51,6 @@ function App() {
         <Skills />
         <Projects />
       </div>
-      {!showLoader && <PlayfulCursor />}
     </>
   );
 }

@@ -489,6 +489,8 @@ section {
 
 /* Timeline glass card. This replaces the old solid yellow/blue cards. */
 .timeline-card {
+  --text: #8a7267;
+  --muted: #8a7267;
   position: relative;
   display: grid;
   grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
@@ -584,7 +586,7 @@ section {
   gap: 7px;
   margin: 0;
   padding-left: 18px;
-  color: #5a4b40;
+  color: var(--text);
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -849,51 +851,6 @@ section {
 .projectItem:hover,
 .skill-item:hover {
   transform: translateY(-5px);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  html.has-playful-cursor,
-  html.has-playful-cursor body,
-  html.has-playful-cursor body * {
-    cursor: none !important;
-  }
-
-  html.has-playful-cursor input,
-  html.has-playful-cursor textarea,
-  html.has-playful-cursor select,
-  html.has-playful-cursor [contenteditable="true"] {
-    cursor: text !important;
-  }
-}
-
-.playful-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2000;
-  width: 18px;
-  height: 18px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate3d(-100px, -100px, 0);
-  will-change: transform, opacity;
-  transition: opacity 100ms ease;
-}
-
-.playful-cursor--visible {
-  opacity: 1;
-}
-
-.playful-cursor--editing {
-  opacity: 0;
-}
-
-.playful-cursor img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  user-select: none;
 }
 
 /* ==========================================================================
