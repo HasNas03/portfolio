@@ -46,7 +46,7 @@ function Projects() {
           <Card name="Tetris" paragraph="Java | JavaFX" 
           image={tetris2} bgColor="#d21bd5" revealDelay={0.04}/>
           {/* coconut tasks*/}
-          <a href='https://github.com/HasNas03/Jupyter-notebooks/blob/main/Site%20Suitability%20Analysis%20Report%20-%20Personal.pdf' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
+          <a href='https://github.com/HasNas03/Coconut-Tasks' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Coconut Tasks ↗" paragraph="JavaScript| HTML | CSS" 
           image={taskImage} bgColor="#715a4a" revealDelay={0.08}/>
           </a>
