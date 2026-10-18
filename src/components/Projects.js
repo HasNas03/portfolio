@@ -11,6 +11,7 @@ import carImage from '../assets/car.jpg'
 import suiteImage from '../assets/suite.jpg'
 import comicImage from '../assets/comics.webp'
 import noteImage from '../assets/note.jpeg'
+import taskImage from '../assets/tasks.png'
 
 function Projects() {
   return (
@@ -44,15 +45,16 @@ function Projects() {
           {/* tetris*/}
           <Card name="Tetris" paragraph="Java | JavaFX" 
           image={tetris2} bgColor="#d21bd5" revealDelay={0.04}/>
-          {/* site suitability*/}
+          {/* coconut tasks*/}
           <a href='https://github.com/HasNas03/Jupyter-notebooks/blob/main/Site%20Suitability%20Analysis%20Report%20-%20Personal.pdf' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
+          <Card name="Coconut Tasks ↗" paragraph="JavaScript| HTML | CSS" 
+          image={taskImage} bgColor="#715a4a" revealDelay={0.08}/>
+          </a>
+          {/* site suitability*/}
+          <a href='https://github.com/HasNas03/Jupyter-notebooks' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="Site Suitability Analysis ↗" paragraph="postgreSQL | QGIS | PostGIS" 
           image={site} bgColor="#b1b0af" revealDelay={0.08}/>
           </a>
-          {/* to do*/}
-          {/* <a href='https://github.com/HasNas03/to-do-list' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
-          <Card name="To-Do App ↗" paragraph="JavaScript | React.js | HTML/CSS" image={todo}/>
-          </a> */}
           {/* emissions*/}
           <a href='https://github.com/HasNas03/Jupyter-notebooks/blob/main/emissions/Carbon%20Emissions.ipynb' style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener noreferrer">
           <Card name="CO2 Emissions Statistical Analysis ↗" paragraph="Python | pandas | Jupyter Notebook" 
